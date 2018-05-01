@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {# METAS #}
+    <meta charset="UTF-8" />
+    <meta name="google-site-verification" content="i4BXRZLWAmjLNVKWk2jdypNwkc1BPUjZnnXX799xbVg" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="author" href="https://www.google.com/+JonathanPlantey" />
+    <meta name="description" content="{% block description %}{% endblock %}" />
+    <title>{% block title %}Jonathan Plantey - Développeur web{% endblock %}</title>
+
+    {# CSS #}
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/default.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fontello/css/fontello.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/print.css') }}" media="print" />
+</head>
+
+<body>
+<div class="container">
+    {% block body %}{% endblock %}
+
+    {% include 'footer.html.twig' %}
+</div>
+
+{% block js %}
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-12424743-9', 'jonathan-plantey.fr');
+        ga('send', 'pageview');
+    </script>
+
+    <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onCaptchaJSLoaded"></script>
+    <script src="{{ asset('js/hinclude.js') }}"></script>
+{% endblock %}
+</body>
+</html>
+

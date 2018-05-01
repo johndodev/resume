@@ -1,0 +1,31 @@
+<section class="content hidden-print" id="contact">
+    <div class="page-header">
+        <h2>Contact</h2>
+    </div>
+    <p>Je suis actuellement en CDI et ne fais <b>pas de freelance</b>, cependant vous pouvez toujours me contacter si vous avez des questions.</p>
+    <div class="row">
+        <div class="col-xs-8">
+            {{ render_esi(path('contact')) }}
+        </div>
+        <div class="col-xs-4">
+            <div class="card">
+                <div class="card-content">
+                    <b>{{ resume.name }}</b><br />
+                    <address><!-- {{ resume.addr1 }} <br/>-->{{ resume.zip }} {{ resume.city }}</address>
+
+                    <i class="glyphicon glyphicon-envelope"></i> jonathan.plantey@gmail.com<br />
+                    <i class="glyphicon glyphicon-link"></i> <a itemprop="url" href="{{path('home')}}">http://www.jonathan-plantey.fr</a><br />
+                    <i class="glyphicon glyphicon-signal"></i> <span itemprop="birthDate" content="1986-05-02">{{ resume.age.y }} ans</span>
+                </div>
+            </div>
+            <div class="page-header">
+                <h3>Mes réseaux</h3>
+            </div>
+            <ul class="list-unstyled">
+                {% for network in resume.networks %}
+                    <li><i class="icon-{{network.name|lower}}"></i> <a href="{{network.url}}" target="_blank">{{network.name}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

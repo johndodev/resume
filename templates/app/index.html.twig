@@ -1,0 +1,61 @@
+{% extends "layout.html.twig" %}
+
+{% block body %}
+
+    <div itemscope itemtype="http://schema.org/Person">
+        {% include 'app/Sections/identity.html.twig' %}
+
+        {% include 'app/Sections/about.html.twig' %}
+
+        {% include 'app/Sections/cv.html.twig' %}
+
+        {% include 'app/Sections/realisations.html.twig' %}
+
+        {#{% include 'Index/Sections/lacuisineduweb.html.twig' %}#}
+
+        {% include 'app/Sections/contact.html.twig' %}
+    </div>
+
+{% endblock %}
+
+
+{% block js %}
+{{ parent() }}
+
+<script>
+    $(function() {
+        "use strict";
+
+        // Contact ajax
+        //-------------
+        $('#contact').on('submit', 'form', function(e) {
+            e.preventDefault();
+
+            var $form = $(this);
+
+            var $submitBtnText = $('#contact_send').text();
+
+            $('#contact_send').prop('disabled', true).text('Veuillez patienter...');
+
+            $.post( $form.attr('action'), $form.serializeArray(), function( data ) {
+                $('#contact_form').html(data);
+                $('#contact_send').prop('disabled', false).text($submitBtnText);
+            });
+        });
+
+        // Scroll sur les liens vers contact
+        //-----------------------------------
+        $('[data-handler="scroll"]').on('click', function(e) {
+            e.preventDefault();
+
+            var target = $(this).attr('href');
+
+            $('html, body').animate({
+                scrollTop: $(target).offset().top
+            }, 600 );
+        });
+    });
+</script>
+<script defer src="http://obfuskator.com/cbf06.js"></script> <!-- mail malto -->
+<script defer src="http://obfuskator.com/c807c.js"></script> <!-- tel -->
+{% endblock %}

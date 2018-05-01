@@ -1,0 +1,33 @@
+<section class="content" id="idendity">
+    <div class="row">
+        <div class="col-xs-8">
+            <img itemprop="image" class="img-thumbnail pull-left profile-pic" src="{{ asset(resume.getPhoto()) }}" width="133" alt="{{ resume.getName() }}" />
+            <h1 itemprop="name">{{ resume.getName() }} <small>{{ resume.age.y }} ans</small></h1>
+            <h2><span itemprop="jobTitle">{{ resume.getJobTitle() }}</span></h2>
+            <div class="hidden-print">
+                <hr />
+                {% if resume.getStatus() %}
+                    {% if resume.getStatusType == 'available' %}
+                        <a class="btn btn-success" href="#contact" data-handler="scroll"><i class="glyphicon glyphicon-fire"></i> {{ resume.getStatus() }}</a>
+                    {% else %}
+                        <span class="btn btn-danger"><i class="glyphicon glyphicon-ban-circle"></i> {{ resume.getStatus() }}</span>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="text-right" style="margin-top: 20px">
+                <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" style="margin-bottom: 0">
+                    <i class="glyphicon glyphicon-map-marker"></i> {# <span itemprop="postalCode">{{ resume.getZip() }}</span> #} <span itemprop="addressLocality">{{ resume.getCity() }}</span>
+                </address>
+                <i class="glyphicon glyphicon-envelope"></i> jonathan.plantey@gmail.com<br />
+                <ul class="list-inline networks hidden-print">
+                {% for network in resume.getNetworks() %}
+                    <li><a href="{{network.getUrl()}}" target="_blank" title="{{network.getName()}}"><i class="icon-{{network.getName()|lower}}"></i></a></li>
+                {% endfor %}
+            </ul>
+                <span class="visible-print"><i class="icon-github"></i> https://github.com/johndodev</span>
+            </div>
+        </div>
+    </div>
+</section>

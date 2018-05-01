@@ -1,0 +1,23 @@
+{% if message_sent %}
+    <div class="alert alert-success">
+        <p><b>Merci !</b> Votre message a bien été envoyé, je vous répondrais au plus tôt.</p>
+    </div>
+{% else %}
+
+{% endif %}
+
+{{ form_start(form, { 'attr': {'id': 'contact_form' }, 'action': path('contact')}) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.name,      {'label': false,        'attr' : {'placeholder': 'Votre nom *'}}) }}
+    {{ form_row(form.email,     {'label': false,        'attr' : {'placeholder': 'Votre e-mail *'}}) }}
+    {{ form_row(form.subject,   {'label': false,        'attr' : {'placeholder': 'Sujet'}}) }}
+    {{ form_row(form.message,   {'label': false,        'attr' : {'placeholder': 'Message *', 'rows':10}}) }}
+    <div class="form-group">
+        <div class="g-recaptcha" data-sitekey="6LelGhITAAAAANF6ezSEiQqebWZfFv1Z4S1VHrfS"></div>
+    </div>
+    <div class="text-center">
+        {{ form_row(form.send,      {'label': 'Envoyer ',   'attr' : {'class':'btn btn-primary'}}) }}
+    </div>
+{{ form_end(form) }}
+
