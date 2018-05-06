@@ -90,19 +90,12 @@ class AppController extends Controller
      */
     private function sendContactMessage(Contact $form, \Swift_Mailer $mailer)
     {
-        try
-        {
-            return $mailer->send((new \Swift_Message())
-                ->setSubject('[jonathan-plantey.fr] '.$form->getSubject())
-                ->setFrom($form->getEmail(), $form->getName())
-                ->setReplyTo($form->getEmail(), $form->getName())
-                ->setTo('jonathan.plantey@gmail.com')
-                ->setBody($this->renderView('Email/contact.html.twig', ['form' => $form]), 'text/html')
-            );
-        } catch (\Exception $e) {
-            // TODO log ?
-            return false;
-        }
-
+        return $mailer->send((new \Swift_Message())
+            ->setSubject('[jonathan-plantey.fr] '.$form->getSubject())
+            ->setFrom($form->getEmail(), $form->getName())
+            ->setReplyTo($form->getEmail(), $form->getName())
+            ->setTo('jonathan.plantey@gmail.com')
+            ->setBody($this->renderView('Email/contact.html.twig', ['form' => $form]), 'text/html')
+        );
     }
 }
