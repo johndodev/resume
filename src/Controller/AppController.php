@@ -70,8 +70,7 @@ class AppController extends Controller
             if($messageSent) {
                 // remove datas
                 $form = $this->createForm(ContactType::class);
-            }
-            else {
+            } else {
                 $form->addError(new FormError('Oops, il semblerait que l\'envoie d\'e-mail ne fonctionne plus très bien. Essayez plutôt <b>jonathan.plantey@gmail.com</b> !'));
             }
         }
@@ -95,7 +94,7 @@ class AppController extends Controller
             ->setFrom($form->getEmail(), $form->getName())
             ->setReplyTo($form->getEmail(), $form->getName())
             ->setTo('jonathan.plantey@gmail.com')
-            ->setBody($this->renderView('Email/contact.html.twig', ['form' => $form]), 'text/html')
+            ->setBody($this->renderView('email/contact.html.twig', ['form' => $form]), 'text/html')
         );
     }
 }
