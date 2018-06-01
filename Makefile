@@ -5,7 +5,7 @@ all:
 	make rights --no-print-directory
 
 rights:
-	chmod 777 var/cache var/log
+	chmod 777 -R var/cache var/log
 
 db:
 	php bin/console doctrine:schema:update --force
