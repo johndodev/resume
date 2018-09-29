@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-all:
+deploy:
 	git pull origin master
-	composer install
+	composer install --no-dev --optimize-autoloader
+	php bin/console cache:clear
 	make rights --no-print-directory
 
 rights:
