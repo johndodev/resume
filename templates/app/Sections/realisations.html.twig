@@ -7,53 +7,19 @@
         Si vous voulez en voir plus, n'hésitez pas à <a href="#contact" data-handler="scroll">me contacter</a>.
     </div>
     <hr />
-    <div class="row">
-        <div class="col-xs-4">
-            <a href="http://www.call-of-geek.com" target="_blank"><img class="img-responsive" src="http://www.apercite.fr/api/apercite/320x240/non/http://www.call-of-geek.com/" alt="Call of Geek"/></a>
+
+    {% for realisation in resume.realisations %}
+        <div class="row">
+            <div class="col-xs-4">
+                <a href="{{ realisation.url }}" target="_blank"><img class="img-responsive" src="http://www.apercite.fr/api/apercite/320x240/non/{{ realisation.url }}"></a>
+            </div>
+            <div class="col-xs-8">
+                <i class="text-muted pull-right">{{ realisation.startedAt | localizeddate('none', 'none', 'fr', null, 'MMMM yyyy') }}</i>
+                <h4>{{ realisation.title }}</h4>
+                <p><a href="{{ realisation.url }}" target="_blank">{{ realisation.urlLabel | default(realisation.url) }}</a></p>
+                {{ realisation.description | raw }}
+            </div>
         </div>
-        <div class="col-xs-8">
-            <i class="text-muted pull-right">Novembre 2013</i>
-            <h4>Call of Geek</h4>
-            <p><a href="http://www.call-of-geek.com" title="site de rencontre pour geek" target="_blank">http://www.call-of-geek.com</a></p>
-            <p>Call of Geek est un site communautaire dédié à la culture geek.</p>
-            <p>Ce site prendra un nouveau départ après la mise en ligne de la refonte du code sous silex en mars 2017.</p>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-xs-4">
-            <a href="https://eciprok.com" target="_blank"><img style="margin: 0 auto;" class="img-responsive" src="http://www.apercite.fr/api/apercite/320x240/non/https://eciprok.com" alt="eciprok"/></a>
-        </div>
-        <div class="col-xs-8">
-            <i class="text-muted pull-right">Novembre 2015</i>
-            <h4>Eciprok</h4>
-            <p><a href="https://eciprok.com" target="_blank">https://eciprok.com</a></p>
-            <p>D'abord une petite application sur Ionic, <i>Eciprok</i> est maintenant une web app (un site responsive quoi..) qui permet de spécifier quels types de relations on aimerait avoir avec nos contact.</p>
-        </div>
-    </div>
-    <hr />
-    <div class="row">
-        <div class="col-xs-4">
-            <a href="https://chrome.google.com/webstore/detail/tab-wheel-scroll/aknfcgiicpmnfhncpljcadokcghjblal?hl=fr" target="_blank"><img style="margin: 0 auto;" class="img-responsive" src="{{ asset('images/mouse.png') }}" alt="mouse"/></a>
-        </div>
-        <div class="col-xs-8">
-            <i class="text-muted pull-right">Août 2014</i>
-            <h4>Tab Wheel Scroll</h4>
-            <p><a href="https://chrome.google.com/webstore/detail/tab-wheel-scroll/aknfcgiicpmnfhncpljcadokcghjblal" target="_blank">https://chrome.google.com/webstore</a></p>
-            <p><i>Tab Wheel Scroll</i> est une petite extension Chrome pour pouvoir switcher d'onglet avec <em>ALT + molette</em> ou <em>clic droit + molette</em>.</p>
-        </div>
-    </div>
-    <hr />
-    <div class="row">
-        <div class="col-xs-4">
-            <a href="http://www.jonathan-plantey.fr" target="_blank"><img class="img-responsive" src="http://www.apercite.fr/api/apercite/320x240/non/http://www.jonathan-plantey.fr/" alt="Jonathan Plantey"/></a>
-        </div>
-        <div class="col-xs-8">
-            <i class="text-muted pull-right">Fevrier 2014</i>
-            <h4>Jonathan Plantey</h4>
-            <p><a href="http://www.jonathan-plantey.fr">http://www.jonathan-plantey.fr</a></p>
-            <p>Site réalisé sous <strong>Silex</strong>, puis refactorisé sous <strong>symfony 4</strong>. J'utilise ici twig, doctrine, bootstrap… ainsi que le service de cache de symfony qui simule le comportement d'un varnish.</p>
-            <div class="alert alert-info" style="margin: 0"><b><i class="glyphicon glyphicon-fire"></i> Heads up !</b> Le code source et disponible sur <b><a href="https://github.com/johndodev/resume" target="_blank">Github</a></b> !</div>
-        </div>
-    </div>
+        <hr>
+    {% endfor %}
 </section>

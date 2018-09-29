@@ -110,6 +110,12 @@ class Resume
     protected $networks;
 
     /**
+     * @ORM\OneToMany(targetEntity="Realisation", mappedBy="resume")
+     * @ORM\OrderBy({"ordering" = "ASC"})
+     */
+    protected $realisations;
+
+    /**
      * @var \DateInterval age de la personne
      */
     private $age;
@@ -124,6 +130,7 @@ class Resume
         $this->experiences  = new ArrayCollection();
         $this->degrees      = new ArrayCollection();
         $this->networks     = new ArrayCollection();
+        $this->realisations = new ArrayCollection();
     }
 
     public function getId()
@@ -244,7 +251,7 @@ class Resume
     }
 
     /**
-     * @return mixed
+     * @return Experience[]|ArrayCollection
      */
     public function getExperiences()
     {
@@ -252,19 +259,27 @@ class Resume
     }
 
     /**
-     * @return mixed
+     * @return Degree[]
      */
     public function getDegrees()
     {
-        return $this->degrees;
+        return $this->degrees->toArray();
     }
 
     /**
-     * @return mixed
+     * @return Network[]
      */
     public function getNetworks()
     {
-        return $this->networks;
+        return $this->networks->toArray();
+    }
+
+    /**
+     * @return Realisation[}
+     */
+    public function getRealisations()
+    {
+        return $this->realisations->toArray();
     }
 
     /**
