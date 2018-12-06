@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Realisation extends ResumeItem
 {
     /**
-     * @ORM\ManyToOne(targetEntity="Resume", inversedBy="degrees")
+     * @ORM\ManyToOne(targetEntity="Resume", inversedBy="realisations")
      */
     protected $resume;
 
@@ -19,4 +19,30 @@ class Realisation extends ResumeItem
      * @ORM\Column(type="smallint")
      */
     private $ordering;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $printDescription;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $visiblePrint;
+
+    /**
+     * @return mixed
+     */
+    public function getVisiblePrint()
+    {
+        return $this->visiblePrint;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrintDescription()
+    {
+        return $this->printDescription;
+    }
 }

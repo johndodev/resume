@@ -32,30 +32,15 @@
             <div class="col-xs-3"><h3 class="bg">Projets persos</h3></div>
         </div>
 
-        <div class="row">
-            <div class="col-xs-3 text-right"><span class="text-muted">En semi pause</span></div>
-            <div class="col-xs-9">
-                <h4>Call of Geek</h4> https://www.call-of-geek.com
-                <p>Site de rencontre et site communautaire à en devenir destiné à la culture geek. Site sous silex, utilisation de services amazon...</p>
+        {% for realisation in resume.realisations if realisation.visiblePrint %}
+            <div class="row">
+                <div class="col-xs-3 text-right"><span class="text-muted">{# TODO ?#}</span></div>
+                <div class="col-xs-9">
+                    <h4>{{ realisation.title }}</h4> {{ realisation.url }}
+                    <p>{{ realisation.printDescription }}</p>
+                </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-3 text-right"><span class="text-muted">En cours</span></div>
-            <div class="col-xs-9">
-                <h4>Eciprok</h4> https://eciprok.com
-                <p>Web app qui permet de spécifier quels types de relations on aimerait avoir avec nos contact.</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-3 text-right"><span class="text-muted">Done</span></div>
-            <div class="col-xs-9">
-                <h4>Tab Wheel Scroll</h4> https://goo.gl/1UAmLC
-                <p>Petite extension Chrome pour pouvoir switcher d'onglet avec ALT + molette ou clic droit + molette.</p>
-            </div>
-        </div>
-
+        {% endfor %}
         <hr>
     </div>
 
