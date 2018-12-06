@@ -27,20 +27,16 @@
         </div>
     {% endfor %}
     <hr>
-    <div class="visible-print">
+    <div class="visible-print_">
         <div class="row">
             <div class="col-xs-3"><h3 class="bg">Projets persos</h3></div>
-        </div>
-
-        {% for realisation in resume.realisations if realisation.visiblePrint %}
-            <div class="row">
-                <div class="col-xs-3 text-right"><span class="text-muted">{# TODO ?#}</span></div>
-                <div class="col-xs-9">
+            <div class="col-xs-9">
+                {% for realisation in resume.realisations if realisation.visiblePrint %}
                     <h4>{{ realisation.title }}</h4> {{ realisation.url }}
                     <p>{{ realisation.printDescription }}</p>
-                </div>
+                {% endfor %}
             </div>
-        {% endfor %}
+        </div>
         <hr>
     </div>
 
