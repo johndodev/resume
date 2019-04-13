@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -19,19 +21,28 @@ class Network
 
     /**
      * @ORM\Column(type="string", length=64)
+     * @var string
      */
     protected $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @var string
      */
     protected $url;
 
     /**
      * @ORM\ManyToOne(targetEntity="Resume", inversedBy="networks")
      * @ORM\JoinColumn(name="resume_id", referencedColumnName="id")
+     * @var Resume
      */
     protected $resume;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     * @var string
+     */
+    protected $iconClass;
 
     /**
      * @return mixed
@@ -42,66 +53,34 @@ class Network
     }
 
     /**
-     * @param mixed $id
-     * @return Network
+     * @return string
      */
-    public function setId($id)
-    {
-        $this->id = $id;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
     /**
-     * @param mixed $name
-     * @return Network
+     * @return string
      */
-    public function setName($name)
-    {
-        $this->name = $name;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getUrl()
+    public function getUrl(): string
     {
         return $this->url;
     }
 
     /**
-     * @param mixed $url
-     * @return Network
+     * @return Resume
      */
-    public function setUrl($url)
-    {
-        $this->url = $url;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getResume()
+    public function getResume(): Resume
     {
         return $this->resume;
     }
 
     /**
-     * @param mixed $resume
-     * @return Network
+     * @return string
      */
-    public function setResume($resume)
+    public function getIconClass(): string
     {
-        $this->resume = $resume;
-        return $this;
+        return $this->iconClass;
     }
 }
