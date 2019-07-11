@@ -23,13 +23,15 @@
                     </address>
                     <i class="fas fa-at"></i> jonathan.plantey@gmail.com<br />
                     <i class="fas fa-link"></i> <a itemprop="url" href="{{path('home')}}">http://www.jonathan-plantey.fr</a><br />
-                    <i class="fas fa-signal"></i> <span itemprop="birthDate" content="1986-05-02">{{ resume.age.y }} ans</span>
-                    <ul class="networks d-print-none m-0">
-                        {% for network in resume.getNetworks() %}
-                            <li class="list-inline-item px-1"><a href="{{network.getUrl()}}" target="_blank" title="{{network.getName()}}"><i class="{{network.getIconClass()}}"></i></a></li>
-                        {% endfor %}
-                    </ul>
-                    <span class="d-none d-print-inline-block"><i class="fab fa-github-alt"></i> https://github.com/johndodev</span>
+                    <div class="d-print-none">
+                        <i class="fas fa-signal"></i> <span itemprop="birthDate" content="1986-05-02">{{ resume.age.y }} ans</span>
+                        <ul class="networks m-0">
+                            {% for network in resume.getNetworks() %}
+                                <li class="list-inline-item px-1"><a href="{{network.getUrl()}}" target="_blank" title="{{network.getName()}}"><i class="{{network.getIconClass()}}"></i></a></li>
+                            {% endfor %}
+                        </ul>
+                        <span class="d-none d-print-inline-block"><i class="fab fa-github-alt"></i> https://github.com/johndodev</span>
+                    </div>
                 </div>
             </div>
         </div>
