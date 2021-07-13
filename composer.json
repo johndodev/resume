@@ -14,8 +14,7 @@
         "symfony/orm-pack": "*",
         "symfony/runtime": "5.3.*",
         "symfony/twig-bundle": "^5.0",
-        "symfony/yaml": "^5.0",
-        "twig/extensions": "^1.5"
+        "symfony/yaml": "^5.0"
     },
     "require-dev": {
         "symfony/profiler-pack": "*",
