@@ -27,9 +27,11 @@
         <div class="row">
             <div class="col-3"><h3 class="bg">Projets persos</h3></div>
             <div class="col-9">
-                {% for realisation in resume.realisations if realisation.visiblePrint %}
-                    <h4>{{ realisation.title }}</h4> {{ realisation.url }}
-                    <p>{{ realisation.printDescription }}</p>
+                {% for realisation in resume.realisations %}
+                    {% if realisation.visiblePrint %}
+                        <h4>{{ realisation.title }}</h4> {{ realisation.url }}
+                        <p>{{ realisation.printDescription }}</p>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>

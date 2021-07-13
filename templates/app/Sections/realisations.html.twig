@@ -8,7 +8,7 @@
                 <a href="{{ realisation.url }}" target="_blank"><img class="img-fluid" src="http://www.apercite.fr/api/apercite/320x240/non/{{ realisation.url }}"></a>
             </div>
             <div class="col-md-8">
-                <i class="text-muted float-right">{{ realisation.startedAt | localizeddate('none', 'none', 'fr', null, 'MMMM yyyy') }}</i>
+                <i class="text-muted float-right">{{ realisation.startedAt | format_datetime('none', 'none', 'MMMM yyyy', locale='fr') }}</i>
                 <h4>{{ realisation.title }}</h4>
                 <p><a href="{{ realisation.url }}" target="_blank">{{ realisation.urlLabel | default(realisation.url) }}</a></p>
                 {{ realisation.description | raw }}
