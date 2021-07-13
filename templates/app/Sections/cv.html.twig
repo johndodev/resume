@@ -1,0 +1,111 @@
+<section class="content" id="cv">
+    <div class="page-header d-print-none">
+        <h2 class="h4">Mon CV</h2>
+        <div class="float-right"><a href="javascript: void(0);" onclick="window.print();"><i class="fas fa-download"></i> Télécharger la version PDF (par l'impression) !</a></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"><h3 class="bg">Expériences</h3></div>
+    </div>
+
+    {% for experience in resume.experiences %}
+        <div class="row">
+            <div class="col-3 text-right">
+                <div class="mb-1"><i class="fas fa-calendar-alt"></i> {{ experience.formattedDate }}</div>
+                <i class="text-muted">{{ experience.formattedDuration }}</i>
+            </div>
+
+            <div class="col-9">
+                <div class="mb-1">
+                    <h4>{{ experience.title }}</h4> <a target="_blank" href="{{ experience.url() }}">{{ experience.urlLabel }}</a>
+                </div>
+                <p>{{ experience.description|raw|nl2br }}</p>
+            </div>
+        </div>
+    {% endfor %}
+    <hr class="d-none d-md-block">
+    <div class="d-none d-print-inline-block">
+        <div class="row">
+            <div class="col-3"><h3 class="bg">Projets persos</h3></div>
+            <div class="col-9">
+                {% for realisation in resume.realisations if realisation.visiblePrint %}
+                    <h4>{{ realisation.title }}</h4> {{ realisation.url }}
+                    <p>{{ realisation.printDescription }}</p>
+                {% endfor %}
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3"><h3 class="bg">Compétences web</h3></div>
+    </div>
+    <div class="row">
+        <div class="col-3 text-right"><span class="badge badge-success">PHP</span></div>
+        <div class="col-9">PHP objet, normes PSR-x, injection de dépendances, abstraction et interfaçage.</div>
+    </div>
+    <div class="row">
+        <div class="col-3 text-right"><span class="badge badge-success">&nbsp;SGBD</span></div>
+        <div class="col-9">MySQL - indexations, optimisations, ORM Doctrine.</div>
+    </div>
+    <div class="row">
+        <div class="col-3 text-right"><span class="badge badge-success">JS</span></div>
+        <div class="col-9">Legacy, JQuery, API HTML5 (service worker, push, ...)</div>
+    </div>
+    <div class="row">
+        <div class="col-3 text-right"><span class="badge badge-success">Intégration</span></div>
+        <div class="col-9">HTML5, CSS, less, Bootstrap, Twig, schema.org.</div>
+    </div>
+    <div class="row">
+        <div class="col-3 text-right"><span class="badge badge-success">Frameworks & librairies</span></div>
+        <div class="col-9">Symfony, Silex, CasperJS & PHPUnit</div>
+    </div>
+    <div class="row">
+        <div class="col-3 text-right"><span class="badge badge-success">Environnement</span></div>
+        <div class="col-9">PhpStorm, GIT, Composer, Jenkins, serveur LAMP / Nginx.</div>
+    </div>
+    <div class="row">
+        <div class="col-3 text-right"><span class="badge badge-success">Notions</span></div>
+        <div class="col-9">Elasticsearch, Atoum, MongoDB, développement mobile avec Ionic 2 & Angular 2</div>
+    </div>
+
+    <hr class="d-none d-md-block">
+    <div class="d-print-none">
+        <div class="row">
+            <div class="col-md-3"><h3 class="bg">Diplômes</h3></div>
+        </div>
+
+        {% for degree in resume.degrees %}
+            <div class="row">
+                <div class="col-3 text-right">
+                    <i class="fas fa-calendar-alt"></i> {{ degree.formattedDate }}<br />
+                </div>
+
+                <div class="col-9">
+                    <div class="mb-1">
+                        <h4>{{ degree.title }}</h4> <a target="_blank" href="{{ degree.url }}">{{ degree.urlLabel }}</a>
+                    </div>
+                    <p>{{ degree.description|nl2br }}</p>
+                </div>
+            </div>
+        {% endfor %}
+        <hr class="d-none d-md-block">
+    </div>
+
+    <div class="row">
+        <div class="col-md-3"><h3 class="bg">Autre</h3></div>
+    </div>
+    <div class="row">
+        <div class="col-3 text-right">Langues</div>
+        <div class="col-9">
+            <p>Anglais : Lecture de doc maîtrisée, compréhension oral acceptable, amateur de vost.</p>
+        </div>
+        <div class="col-3 text-right">Caractère</div>
+        <div class="col-9">
+            <p>Calme, sociable, curieux, autodidacte. J'aime apprendre tout autant que transmettre.</p>
+        </div>
+        <div class="col-3 text-right">Sports</div>
+        <div class="col-9">
+            <p>Tennis de table, baby-foot, Hearthstone & Heroes of the Storm.</p>
+        </div>
+    </div>
+</section>
