@@ -3,7 +3,7 @@ deploy:
 	git pull origin master
 	composer dump-env prod
 	composer install --no-dev --optimize-autoloader
-	php bin/console cache:clear
+	APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear
 	make rights --no-print-directory
 
 rights:
