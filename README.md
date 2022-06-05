@@ -1,6 +1,6 @@
 resume
 ======
-Mon CV sous Symfony : http://www.jonathan-plantey.fr
+Mon CV sous Symfony : https://www.jonathan-plantey.fr
 
 La mise à disposition du code source à pour but éventuel de servir de support pour un entretien, ou d'exemples pour des élèves.
 
