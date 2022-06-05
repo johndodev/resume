@@ -71,11 +71,6 @@ class Resume
     protected string $email;
 
     /**
-     * @ORM\Column(type="text")
-     */
-    protected string $about;
-
-    /**
      * @ORM\OneToMany(targetEntity="Experience", mappedBy="resume")
      * @ORM\OrderBy({"startedAt" = "DESC"})
      * @var Collection<int, Experience>
@@ -161,11 +156,6 @@ class Resume
     public function getEmail(): string
     {
         return $this->email;
-    }
-
-    public function getAbout(): string
-    {
-        return $this->about;
     }
 
     /**
