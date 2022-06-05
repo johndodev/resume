@@ -1,0 +1,39 @@
+<section class="content" id="identity">
+    <div class="row">
+        <div class="col-md-7 col-lg-8">
+            <img itemprop="image" class="img-thumbnail float-left profile-pic mr-3" src="{{ asset(resume.photo) }}?v=2" width="133" alt="{{ resume.name }}" />
+            <h1 itemprop="name" class="h2 text-uppercase">{{ resume.name }}</h1>
+            <h2 class="h4"><span itemprop="jobTitle">{{ resume.jobTitle }}</span></h2>
+            <div class="d-print-none">
+                <hr style="overflow: hidden" />
+                {% if resume.status %}
+                    {% if resume.statusType is same as(constant('App\\Entity\\Resume::STATUS_TYPE_AVAILABLE')) %}
+                        <span class="btn btn-success"><i class="fas fa-fire"></i> {{ resume.status }}</span>
+                    {% else %}
+                        <span class="btn btn-danger"><i class="fas fa-ban"></i> {{ resume.status }}</span>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-5 col-lg-4">
+            <div class="card text-right">
+                <div class="card-content">
+                    <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="mb-0">
+                        <i class="fas fa-map-marker-alt"></i> <span itemprop="addressLocality">{{ resume.getCity() }}</span>
+                    </address>
+                    <i class="fas fa-at"></i> {{ resume.email }}<br />
+                    <i class="fas fa-link"></i> <a itemprop="url" href="{{ path('home') }}">https://www.jonathan-plantey.fr</a><br />
+                    <div class="d-print-none">
+                        <i class="fas fa-signal"></i> <span itemprop="birthDate" content="{{ resume.birthdate | date('Y-m-d') }}">{{ resume.age.y }} ans</span>
+                        <ul class="networks m-0">
+                            {% for network in resume.networks %}
+                                <li class="list-inline-item px-1"><a href="{{ network.url }}" target="_blank" title="{{ network.name }}"><i class="{{ network.iconClass }}"></i></a></li>
+                            {% endfor %}
+                        </ul>
+                        <span class="d-none d-print-inline-block"><i class="fab fa-github-alt"></i> https://github.com/johndodev</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
