@@ -2,10 +2,13 @@
     <div class="page-header">
         <h2 class="h4">Mes réalisations</h2>
     </div>
+    <div class="alert alert-warning">
+        <p class="mb-0"><b>Disclaimer ! </b><br>Atteint de la maladie du dev qui ne finit ou ne maintient jamais complètement ses projets, certains sont abandonnés, buggés, etc. </p>
+    </div>
     {% for realisation in resume.realisations %}
         <div class="row">
             <div class="col-md-4">
-                <a href="{{ realisation.url }}" target="_blank"><img class="img-fluid" src="http://www.apercite.fr/api/apercite/320x240/non/{{ realisation.url }}"></a>
+                <a href="{{ realisation.url }}" target="_blank"><img class="img-fluid" src="http://www.apercite.fr/api/apercite/320x240/non/{{ realisation.url }}" alt="{{ realisation.title }}"></a>
             </div>
             <div class="col-md-8">
                 <i class="text-muted float-right">{{ realisation.startedAt | format_datetime('none', 'none', 'MMMM yyyy', locale='fr') }}</i>
