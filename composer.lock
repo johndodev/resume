@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b9351e210bdd891d001b486cbe755dc3",
+    "content-hash": "baa6fbafc2b28769d3f7dc4b08c399c6",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -5483,16 +5483,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v3.4.1",
+            "version": "v3.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "e939eae92386b69b49cfa4599dd9bead6bf4a342"
+                "reference": "c38fd6b0b7f370c198db91ffd02e23b517426b58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/e939eae92386b69b49cfa4599dd9bead6bf4a342",
-                "reference": "e939eae92386b69b49cfa4599dd9bead6bf4a342",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/c38fd6b0b7f370c198db91ffd02e23b517426b58",
+                "reference": "c38fd6b0b7f370c198db91ffd02e23b517426b58",
                 "shasum": ""
             },
             "require": {
@@ -5543,7 +5543,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.4.1"
+                "source": "https://github.com/twigphp/Twig/tree/v3.4.3"
             },
             "funding": [
                 {
@@ -5555,7 +5555,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-17T05:48:52+00:00"
+            "time": "2022-09-28T08:42:51+00:00"
         }
     ],
     "packages-dev": [
@@ -5833,7 +5833,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.1"
+        "php": ">=8.1",
+        "ext-intl": "*"
     },
     "platform-dev": [],
     "platform-overrides": {
