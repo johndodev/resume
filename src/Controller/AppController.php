@@ -13,7 +13,7 @@ class AppController extends AbstractController
     public function index(ResumeRepository $resumeRepository): Response
     {
         return $this->render('app/index.html.twig', [
-            'resume' => $resumeRepository->find(1),
+            'resume' => $resumeRepository->findOneBy([]),
         ]);
     }
 }
