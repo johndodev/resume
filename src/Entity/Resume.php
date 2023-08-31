@@ -25,7 +25,7 @@ class Resume
     #[ORM\Column(length: 64)]
     protected ?string $name = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
     protected ?\DateTime $birthdate = null;
 
     /**
