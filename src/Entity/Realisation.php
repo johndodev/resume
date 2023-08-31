@@ -16,7 +16,7 @@ class Realisation extends ResumeItem
     #[ORM\Column(type: Types::SMALLINT)]
     private int $ordering;
 
-    #[ORM\Column(type: Types::TEXT, length: 65000 , nullable: true)]
+    #[ORM\Column(type: Types::TEXT, length: 65000, nullable: true)]
     private ?string $printDescription;
 
     #[ORM\Column(type: Types::BOOLEAN)]

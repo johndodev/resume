@@ -28,7 +28,7 @@ abstract class ResumeItem
     #[ORM\Column(length: 64, nullable: true)]
     protected ?string $urlLabel;
 
-    #[ORM\Column(type: Types::TEXT ,length: 65535, nullable: true)]
+    #[ORM\Column(type: Types::TEXT, length: 65535, nullable: true)]
     protected ?string $description;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
