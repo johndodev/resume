@@ -4,51 +4,37 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Décrit un élément d'un CV comprenant : titre, description, date de début et de fin, url et label
  * Ex : une expérience professionnelle ou un diplome
- *
- * @ORM\MappedSuperclass
  */
+#[ORM\MappedSuperclass]
 abstract class ResumeItem
 {
-    /**
-     * @ORM\Column(type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected int $id;
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    private ?int $id = null;
 
-    /**
-     * @ORM\Column(type="string", length=64, nullable=true)
-     */
+    #[ORM\Column(length: 64, nullable: true)]
     protected ?string $title;
 
-    /**
-     * @ORM\Column(type="string", nullable=true)
-     */
+    #[ORM\Column(nullable: true)]
     protected ?string $url;
 
-    /**
-     * @ORM\Column(name="url_label", type="string", length=64, nullable=true)
-     */
+    #[ORM\Column(length: 64, nullable: true)]
     protected ?string $urlLabel;
 
-    /**
-     * @ORM\Column(type="text", nullable=true)
-     */
+    #[ORM\Column(type: Types::TEXT ,length: 65535, nullable: true)]
     protected ?string $description;
 
-    /**
-     * @ORM\Column(name="started_at", type="date", nullable=true)
-     */
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     protected ?\DateTime $startedAt;
 
-    /**
-     * @ORM\Column(name="stopped_at", type="date", nullable=true)
-     */
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     protected ?\DateTime $stoppedAt;
 
     public function getId(): int

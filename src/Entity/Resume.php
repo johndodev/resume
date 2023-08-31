@@ -4,98 +4,65 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use App\Entity\Enums\ResumeStatus;
+use App\Repository\ResumeRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass="App\Repository\ResumeRepository", readOnly=true)
- * @ORM\Table(name="resume")
- */
+#[ORM\Entity(repositoryClass: ResumeRepository::class)]
 class Resume
 {
-    public const STATUS_TYPE_AVAILABLE = 'available';
-    public const STATUS_TYPE_BUSY = 'busy';
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    private ?int $id = null;
 
-    /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
-     */
-    private int $id;
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    protected ?\DateTime $updatedAt = null;
 
-    /**
-     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
-     */
-    protected ?\DateTime $updatedAt;
+    #[ORM\Column(length: 64)]
+    protected ?string $name = null;
 
-    /**
-     * @ORM\Column(type="string", length=64)
-     */
-    protected string $name;
-
-    /**
-     * @ORM\Column(type="date")
-     */
-    protected \DateTime $birthdate;
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    protected ?\DateTime $birthdate = null;
 
     /**
      * @ORM\Column(name="job_title", type="string", length=64)
      */
+    #[ORM\Column(length: 64)]
     protected string $jobTitle;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
+    #[ORM\Column]
     protected string $status;
 
-    /**
-     * @ORM\Column(name="status_type", type="string")
-     * TODO enum
-     */
-    protected string $statusType;
+    #[ORM\Column(enumType: ResumeStatus::class)]
+    protected ?ResumeStatus $statusType = null;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    protected string $photo;
+    #[ORM\Column]
+    protected ?string $photo = null;
 
-    /**
-     * @ORM\Column(type="string", length=64)
-     */
-    protected string $city;
+    #[ORM\Column(length: 64)]
+    protected ?string $city = null;
 
-    /**
-     * @ORM\Column(type="string", length=64)
-     */
-    protected string $email;
+    #[ORM\Column(length: 64)]
+    protected ?string $email = null;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Experience", mappedBy="resume")
-     * @ORM\OrderBy({"startedAt" = "DESC"})
-     * @var Collection<int, Experience>
-     */
+    #[ORM\OneToMany(mappedBy: 'resume', targetEntity: Experience::class)]
+    #[ORM\OrderBy(['startedAt' => 'DESC'])]
     protected Collection $experiences;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Degree", mappedBy="resume")
-     * @ORM\OrderBy({"startedAt" = "DESC"})
-     * @var Collection<int, Degree>
-     */
+    #[ORM\OneToMany(mappedBy: 'resume', targetEntity: Degree::class)]
+    #[ORM\OrderBy(['startedAt' => 'DESC'])]
     protected Collection $degrees;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Network", mappedBy="resume")
-     * @ORM\OrderBy({"id" = "ASC"})
-     * @var Collection<int, Network>
-     */
+    #[ORM\OneToMany(mappedBy: 'resume', targetEntity: Network::class)]
+    #[ORM\OrderBy(['id' => 'DESC'])]
     protected Collection $networks;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Realisation", mappedBy="resume")
-     * @ORM\OrderBy({"ordering" = "ASC"})
-     * @var Collection<int, Realisation>
-     */
+    #[ORM\OneToMany(mappedBy: 'resume', targetEntity: Realisation::class)]
+    #[ORM\OrderBy(['ordering' => 'DESC'])]
     protected Collection $realisations;
 
     private ?\DateInterval $age = null;
@@ -138,7 +105,7 @@ class Resume
         return $this->status;
     }
 
-    public function getStatusType(): string
+    public function getStatusType(): ResumeStatus
     {
         return $this->statusType;
     }

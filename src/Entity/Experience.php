@@ -6,14 +6,9 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Table(name="experience")
- * @ORM\Entity(readOnly=true)
- */
+#[ORM\Entity]
 class Experience extends ResumeItem
 {
-    /**
-     * @ORM\ManyToOne(targetEntity="Resume", inversedBy="experiences")
-     */
+    #[ORM\ManyToOne(inversedBy: 'experiences')]
     protected Resume $resume;
 }

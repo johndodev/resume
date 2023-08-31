@@ -6,60 +6,47 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Table(name="network")
- * @ORM\Entity(readOnly=true)
- */
+#[ORM\Entity]
 class Network
 {
-    /**
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private int $id;
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    private ?int $id = null;
 
-    /**
-     * @ORM\Column(type="string", length=64)
-     */
-    private string $name;
+    #[ORM\Column(length: 64)]
+    private ?string $name = null;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private string $url;
+    #[ORM\Column]
+    private ?string $url = null;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Resume", inversedBy="networks")
-     */
-    private Resume $resume;
+    #[ORM\ManyToOne(inversedBy: 'networks')]
+    private ?Resume $resume = null;
 
-    /**
-     * @ORM\Column(type="string")
-     */
-    private string $iconClass;
+    #[ORM\Column]
+    private ?string $iconClass = null;
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
 
-    public function getUrl(): string
+    public function getUrl(): ?string
     {
         return $this->url;
     }
 
-    public function getResume(): Resume
+    public function getResume(): ?Resume
     {
         return $this->resume;
     }
 
-    public function getIconClass(): string
+    public function getIconClass(): ?string
     {
         return $this->iconClass;
     }
