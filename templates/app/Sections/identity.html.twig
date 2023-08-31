@@ -7,7 +7,7 @@
             <div class="d-print-none">
                 <hr style="overflow: hidden" />
                 {% if resume.status %}
-                    {% if resume.statusType is same as(constant('App\\Entity\\Resume::STATUS_TYPE_AVAILABLE')) %}
+                    {% if resume.statusType.available %}
                         <span class="btn btn-success"><i class="fas fa-fire"></i> {{ resume.status }}</span>
                     {% else %}
                         <span class="btn btn-danger"><i class="fas fa-ban"></i> {{ resume.status }}</span>
@@ -24,7 +24,7 @@
                     <i class="fas fa-at"></i> {{ resume.email }}<br />
                     <i class="fas fa-link"></i> <a itemprop="url" href="{{ path('home') }}">https://www.jonathan-plantey.fr</a><br />
                     <div class="d-print-none">
-                        <i class="fas fa-signal"></i> <span itemprop="birthDate" content="{{ resume.birthdate | date('Y-m-d') }}">{{ resume.age.y }} ans</span>
+{#                        <i class="fas fa-signal"></i> <span itemprop="birthDate" content="{{ resume.birthdate | date('Y-m-d') }}">{{ resume.age.y }} ans</span>#}
                         <ul class="networks m-0">
                             {% for network in resume.networks %}
                                 <li class="list-inline-item px-1"><a href="{{ network.url }}" target="_blank" title="{{ network.name }}"><i class="{{ network.iconClass }}"></i></a></li>

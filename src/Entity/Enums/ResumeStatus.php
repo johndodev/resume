@@ -8,4 +8,9 @@ enum ResumeStatus: string
 {
     case AVAILABLE = 'available';
     case BUSY = 'busy';
+
+    public function isAvailable(): bool
+    {
+        return $this === self::AVAILABLE;
+    }
 }
