@@ -14,10 +14,10 @@ class Realisation extends ResumeItem
     protected ?Resume $resume = null;
 
     #[ORM\Column(type: Types::SMALLINT)]
-    private int $ordering;
+    private int $ordering = 0;
 
-    #[ORM\Column(type: Types::TEXT, length: 65000, nullable: true)]
-    private ?string $printDescription;
+    #[ORM\Column(type: Types::TEXT, length: 65535, nullable: true)]
+    private ?string $printDescription = null;
 
     #[ORM\Column(type: Types::BOOLEAN)]
     private bool $visiblePrint = false;
@@ -30,5 +30,10 @@ class Realisation extends ResumeItem
     public function isVisiblePrint(): bool
     {
         return $this->visiblePrint;
+    }
+
+    public function getOrdering(): int
+    {
+        return $this->ordering;
     }
 }

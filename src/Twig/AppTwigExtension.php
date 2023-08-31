@@ -24,16 +24,16 @@ class AppTwigExtension extends AbstractExtension
     public function duration(ResumeItem $resumeItem): string
     {
         // La durée
-        $duration = $resumeItem->getStartedAt()->diff($resumeItem->getStoppedAt() ?: new \DateTime());
+        $duration = $resumeItem->getStartedAt()?->diff($resumeItem->getStoppedAt() ?: new \DateTime());
 
         // formatage
         $output = '';
 
-        if ($duration->y) {
+        if ($duration?->y) {
             $output .= $duration->y > 1 ? $duration->y.' ans ' : $duration->y.' an ';
         }
 
-        if ($duration->m) {
+        if ($duration?->m) {
             $output .= $duration->m.' mois';
         }
 
@@ -45,6 +45,10 @@ class AppTwigExtension extends AbstractExtension
      */
     public function formattedDate(ResumeItem $resumeItem): string
     {
+        if (!$resumeItem->getStartedAt()) {
+            return '';
+        }
+
         if (!$resumeItem->getStoppedAt()) {
             // pas finis : "depuis x"
             $output = 'Depuis '.\IntlDateFormatter::formatObject($resumeItem->getStartedAt(), 'MMM y');

@@ -38,7 +38,7 @@ class Resume
     protected string $status;
 
     #[ORM\Column(enumType: ResumeStatus::class)]
-    protected ?ResumeStatus $statusType = null;
+    protected ResumeStatus $statusType = ResumeStatus::AVAILABLE;
 
     #[ORM\Column]
     protected ?string $photo = null;
@@ -85,12 +85,12 @@ class Resume
         return $this->updatedAt;
     }
 
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
 
-    public function getBirthdate(): \DateTime
+    public function getBirthdate(): ?\DateTime
     {
         return $this->birthdate;
     }
@@ -110,17 +110,17 @@ class Resume
         return $this->statusType;
     }
 
-    public function getPhoto(): string
+    public function getPhoto(): ?string
     {
         return $this->photo;
     }
 
-    public function getCity(): string
+    public function getCity(): ?string
     {
         return $this->city;
     }
 
-    public function getEmail(): string
+    public function getEmail(): ?string
     {
         return $this->email;
     }
@@ -157,8 +157,12 @@ class Resume
         return $this->realisations->toArray();
     }
 
-    public function getAge(): \DateInterval
+    public function getAge(): ?\DateInterval
     {
+        if (!$this->getBirthdate()) {
+            return null;
+        }
+
         return $this->age ?: $this->age = $this->getBirthdate()->diff(new \DateTime());
     }
 
@@ -168,7 +172,7 @@ class Resume
     public function getExperienceDuration(): \DateInterval
     {
         if (!$this->experienceDuration) {
-            if ($firstExperience = $this->getFirstExperience()) {
+            if (($firstExperience = $this->getFirstExperience()) && $firstExperience->getStartedAt()) {
                 $this->experienceDuration = $firstExperience->getStartedAt()->diff(new \DateTime());
             } else {
                 $this->experienceDuration = new \DateInterval('PT0S'); // 0 expérience

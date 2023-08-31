@@ -37,7 +37,7 @@ abstract class ResumeItem
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     protected ?\DateTime $stoppedAt;
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
