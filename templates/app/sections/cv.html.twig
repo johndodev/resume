@@ -1,0 +1,116 @@
+<section class="my-5 bg-white p-4 shadow-sm rounded">
+    <div class="border-bottom mb-4 d-print-none d-flex justify-content-between align-items-center">
+        <h2 class="h-underline h4 me-2">Mon CV</h2>
+        <a class="border btn btn-light btn-sm" href="javascript: void(0);" onclick="window.print();"><i class="fas fa-download"></i> Télécharger la version PDF (par l'impression) !</a>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-3"><h3 class="h-danger">Expériences</h3></div>
+    </div>
+
+    {% for experience in resume.experiences %}
+        <div class="row g-2 g-md-4 {% if not loop.last %}mb-4{% endif %}">
+            <div class="col-md-3 text-end">
+                <div class="mb-1 d-flex flex-md-column justify-content-between">
+                    <span><i class="fas fa-calendar-alt"></i> {{ experience | formattedDate }}</span>
+                    <span><i class="text-body-secondary">{{ experience | duration }}</i></span>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="d-flex justify-content-between justify-content-md-start align-items-center">
+                    <h4 class="h-secondary mb-0 me-2">{{ experience.title }}</h4>
+                    <a target="_blank" href="{{ experience.url() }}">{{ experience.urlLabel }}</a>
+                </div>
+                <p class="mb-0">{{ experience.description|raw|nl2br }}</p>
+            </div>
+        </div>
+    {% endfor %}
+
+    <hr class="my-4">
+
+    <div class="d-none d-print-inline-block">
+        <div class="row g-4">
+            <div class="col-md-3"><h3 class="h-danger">Projets persos</h3></div>
+            <div class="col-md-9">
+                {% for realisation in resume.realisations %}
+                    {% if realisation.visiblePrint %}
+                        <div class="d-flex justify-content-between justify-content-md-start align-items-center">
+                            <h4 class="h-secondary mb-0 me-2">{{ realisation.title }}</h4>
+                            <a href="{{ realisation.url }}" target="_blank">{{ realisation.url }}</a>
+                        </div>
+                        <p class="{% if loop.last %}mb-0{% endif %}">{{ realisation.printDescription }}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <hr class="my-4">
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-3"><h3 class="h-danger">Compétences web</h3></div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-3 text-md-end"><span class="badge bg-success">PHP</span></div>
+        <div class="col">PHP objet, normes PSR, injection de dépendances, abstraction et interfaçage.<br>Framework Symfony</div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-3 text-md-end"><span class="badge bg-success">&nbsp;SGBD</span></div>
+        <div class="col">MySQL - indexations, optimisations, ORM Doctrine.</div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-3 text-md-end"><span class="badge bg-success">JS</span></div>
+        <div class="col">ES-6, framework <a href="https://stimulus.hotwired.dev/" target="_blank">Stimulus</a>, API HTML5 (service worker, push, ...), <small>JQuery</small>.</div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-3 text-md-end"><span class="badge bg-success">Front</span></div>
+        <div class="col">HTML5, CSS, Bootstrap, Twig.<br>Intégration responsive.</div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-3 text-md-end"><span class="badge bg-success">Environnement</span></div>
+        <div class="col">PhpStorm, GIT, Composer, serveur LAMP / Nginx, Docker, Caprover, VPS OVH ou Amazon (lightsail).</div>
+    </div>
+
+    <hr class="my-4">
+
+    <div class="d-print-none">
+        <div class="row mb-3">
+            <div class="col-md-3"><h3 class="h-danger">Diplômes</h3></div>
+        </div>
+
+        {% for degree in resume.degrees %}
+            <div class="row g-2 g-md-4 mb-4">
+                <div class="col-md-3 text-md-end">
+                    <div class="mb-1"><i class="fas fa-calendar-alt"></i> {{ degree | formattedDate }}</div>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="d-flex justify-content-between justify-content-md-start align-items-center">
+                        <h4 class="h-secondary mb-0 me-2">{{ degree.title }}</h4>
+                        <a target="_blank" href="{{ degree.url }}">{{ degree.urlLabel }}</a>
+                    </div>
+                    <p class="mb-0">{{ degree.description|nl2br }}</p>
+                </div>
+            </div>
+        {% endfor %}
+        <hr class="my-4">
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-3"><h3 class="h-danger">Autre</h3></div>
+    </div>
+    <div class="row g-3">
+        <div class="col-3 text-md-end fw-semibold">Langues</div>
+        <div class="col-9">
+            <p class="mb-0">Anglais : Lecture de doc maîtrisée, compréhension orale acceptable, amateur de vost.</p>
+            <p class="mb-0">Japonais : un jour.</p>
+        </div>
+        <div class="col-3 text-md-end fw-semibold">Caractère</div>
+        <div class="col-9">
+            <p class="mb-0">Calme, curieux, autodidacte. J'aime apprendre tout autant que transmettre.</p>
+        </div>
+        <div class="col-3 text-md-end fw-semibold">Centres d'intérêts</div>
+        <div class="col-9">
+            <p class="mb-0">Culture geek, entrepreneuriat, mode de vie sain.</p>
+        </div>
+    </div>
+</section>

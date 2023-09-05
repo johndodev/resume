@@ -1,0 +1,58 @@
+:root {
+    --bs-primary: #94BA65;
+    --bs-primary-rgb: 148, 186, 101;
+
+
+    --bs-secondary: #f75353;
+
+    /*--bs-link-color-rgb: 148, 186, 101;*/
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.link-primary:hover {
+    color: #98ce55!important;
+}
+
+html {
+    font-size: 15px;
+}
+
+
+h2, h3 {
+    color: var(--bs-primary)!important;
+}
+
+h4 {
+
+}
+
+.h-secondary {
+    color: var(--bs-secondary);
+    font-weight: bold;
+    display: inline;
+    font-size: 1rem;
+}
+
+.h-underline {
+    padding-bottom: .5rem;
+    border-bottom: 2px solid var(--bs-primary);
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.h-danger {
+    background: #f75353;
+    text-transform: uppercase;
+    color: #fff !important;
+    padding: .3rem;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.bg-card {
+    background-color: #646464!important;
+}

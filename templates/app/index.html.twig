@@ -1,15 +1,15 @@
-{% extends "layout.html.twig" %}
+{% extends "base.html.twig" %}
 
-{% block body %}
+{% block content %}
     <div itemscope itemtype="http://schema.org/Person">
-        {% include 'app/Sections/identity.html.twig' %}
+        {% include 'app/sections/identity.html.twig' %}
 
-        {% include 'app/Sections/about.html.twig' %}
+        {% include 'app/sections/about.html.twig' %}
 
-        {% include 'app/Sections/cv.html.twig' %}
+        {% include 'app/sections/cv.html.twig' %}
 
-        {% include 'app/Sections/realisations.html.twig' %}
+        {% include 'app/sections/realisations.html.twig' %}
 
-        {% include 'app/Sections/contact.html.twig' %}
+        {% include 'app/sections/contact.html.twig' %}
     </div>
 {% endblock %}
