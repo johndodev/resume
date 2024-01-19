@@ -1,6 +1,6 @@
 # see https://symfony.com/doc/current/reference/configuration/framework.html
 framework:
-    http_cache: true
+    http_cache: false
     trusted_proxies: '%env(TRUSTED_PROXIES)%'
 
 

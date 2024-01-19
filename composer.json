@@ -9,6 +9,7 @@
         "doctrine/orm": "^2.9",
         "symfony/apache-pack": "^1.0",
         "symfony/asset": "^6.4",
+        "symfony/asset-mapper": "^6.4",
         "symfony/console": "^6.4",
         "symfony/dotenv": "^6.4",
         "symfony/flex": "^2.0",
@@ -16,10 +17,11 @@
         "symfony/monolog-bundle": "^3.1",
         "symfony/runtime": "^6.4",
         "symfony/twig-bundle": "^6.4",
-        "symfony/webpack-encore-bundle": "^2.0",
+        "symfony/web-link": "^6.4",
         "symfony/yaml": "^6.4",
         "twig/extra-bundle": "^3.3",
-        "twig/intl-extra": "^3.7"
+        "twig/intl-extra": "^3.7",
+        "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
@@ -64,7 +66,8 @@
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd"
+            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd",
+            "importmap:install": "symfony-cmd"
         },
         "post-install-cmd": [
             "@auto-scripts"
