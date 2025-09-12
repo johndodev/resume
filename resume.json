@@ -1,0 +1,135 @@
+{
+    "basics": {
+        "name": "Jonathan Plantey",
+        "label": "Développeur senior PHP / Symfony",
+        "image": "https://jonathan-plantey.fr/images/jonathan-plantey.jpg?v=2",
+        "email": "jonathan.plantey@gmail.com",
+        "phone": "",
+        "url": "https://jonathan-plantey.fr",
+        "summary": "J'ai fait mes premiers pas en tant que développeur web il y a environ 18 ans, professionnellement maintenant depuis environ 16.\n\nComme tout développeur passionné, j'ai toujours des idées de sites dans les cartons, des projets \"perso\" en cours, à terminer, à lancer, à reprendre...\n\nJ'ai tout de même besoin de m'investir dans un projet plus professionnel, plus concret. Je considèrere ces deux univers comme complémentaires, chacun nourrissant l'autre.\n\nJ'accorde une importance particulière à l'optimisation et la lisibilité de mon code; J'apprécie notamment écrire du code propre dans le respect des bonnes pratiques, ce que je pense être indispensable pour la pérennité et le bon maintien d'un projet web.\n\nRigueur, logique, optimisation, cohérence, ... sont des valeurs que je mets en pratique dans la vie courante comme dans mon métier.\n\nC'est dans ce sens que j'aime orienter mon implication et mes propositions dans un projet.\n\nJ'aime aussi apprendre tout autant que transmettre.\n\nBon ça fait très sérieux comme ça, mais je peux être cool aussi !",
+        "location": {
+            "address": "",
+            "postalCode": "",
+            "city": "Amiens",
+            "countryCode": "FR",
+            "region": ""
+        },
+        "profiles": [
+            {
+                "network": "Linkedin",
+                "username": "jonathan-plantey",
+                "url": "https://www.linkedin.com/in/jonathan-plantey"
+            },
+            {
+                "network": "Github",
+                "username": "jonathan-plantey",
+                "url": "https://github.com/jonathan-plantey"
+            },
+            {
+                "network": "X",
+                "username": "johndodev",
+                "url": "https://x.com/johndodev"
+            }
+        ]
+    },
+    "work": [
+        {
+            "name": "Développement web",
+            "location" : "Amiens",
+            "description": null,
+            "position": null,
+            "url": null,
+            "startDate": "2022-09-01",
+            "endDate": null,
+            "summary": "Freelance et projets perso.",
+            "highlights": []
+        },
+        {
+            "name": "Formateur PHP / Symfony",
+            "location" : "Bordeaux",
+            "description": null,
+            "position": "Formateur",
+            "url": "https://www.wildcodeschool.com",
+            "startDate": "2021-11-01",
+            "endDate": "2022-08-01",
+            "summary": "Sessions de formation PHP / Symfony avec des adultes en reconversion.",
+            "highlights": []
+        }
+    ],
+    "volunteer": [{
+        "organization": "Organization",
+        "position": "Volunteer",
+        "url": "https://organization.com/",
+        "startDate": "2012-01-01",
+        "endDate": "2013-01-01",
+        "summary": "Description…",
+        "highlights": [
+            "Awarded 'Volunteer of the Month'"
+        ]
+    }],
+    "education": [{
+        "institution": "University",
+        "url": "https://institution.com/",
+        "area": "Software Development",
+        "studyType": "Bachelor",
+        "startDate": "2011-01-01",
+        "endDate": "2013-01-01",
+        "score": "4.0",
+        "courses": [
+            "DB1101 - Basic SQL"
+        ]
+    }],
+    "awards": [{
+        "title": "Award",
+        "date": "2014-11-01",
+        "awarder": "Company",
+        "summary": "There is no spoon."
+    }],
+    "certificates": [{
+        "name": "Certificate",
+        "date": "2021-11-07",
+        "issuer": "Company",
+        "url": "https://certificate.com"
+    }],
+    "publications": [{
+        "name": "Publication",
+        "publisher": "Company",
+        "releaseDate": "2014-10-01",
+        "url": "https://publication.com",
+        "summary": "Description…"
+    }],
+    "skills": [{
+        "name": "Web Development",
+        "level": "Master",
+        "keywords": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ]
+    }],
+    "languages": [{
+        "language": "English",
+        "fluency": "Native speaker"
+    }],
+    "interests": [{
+        "name": "Wildlife",
+        "keywords": [
+            "Ferrets",
+            "Unicorns"
+        ]
+    }],
+    "references": [{
+        "name": "Jane Doe",
+        "reference": "Reference…"
+    }],
+    "projects": [{
+        "name": "Project",
+        "startDate": "2019-01-01",
+        "endDate": "2021-01-01",
+        "description": "Description...",
+        "highlights": [
+            "Won award at AIHacks 2016"
+        ],
+        "url": "https://project.com/"
+    }]
+}
