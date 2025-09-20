@@ -34,102 +34,202 @@
     },
     "work": [
         {
-            "name": "Développement web",
+            "name": "Freelance",
             "location" : "Amiens",
-            "description": null,
-            "position": null,
-            "url": null,
+            "position": "Entreprenariat et freelance",
             "startDate": "2022-09-01",
-            "endDate": null,
             "summary": "Freelance et projets perso.",
             "highlights": []
         },
         {
-            "name": "Formateur PHP / Symfony",
+            "name": "Wild Code School",
             "location" : "Bordeaux",
-            "description": null,
             "position": "Formateur",
             "url": "https://www.wildcodeschool.com",
             "startDate": "2021-11-01",
             "endDate": "2022-08-01",
             "summary": "Sessions de formation PHP / Symfony avec des adultes en reconversion.",
             "highlights": []
+        },
+        {
+            "name": "E-monsite",
+            "location" : "Amiens",
+            "position": "Lead développeur",
+            "url": "https://www.e-monsite.com/",
+            "startDate": "2019-09-01",
+            "endDate": "2021-10-01",
+            "summary": "Migration de la plateforme en Symfony, accompagnement des développeurs dans leur apprentissage du framework, et interlocuteur privilégié de l'équipe technique.",
+            "highlights": []
+        },
+        {
+            "name": "Wizaplace",
+            "location" : "Lyon",
+            "position": "Développeur web",
+            "url": "https://www.wizaplace.com/",
+            "startDate": "2019-09-01",
+            "endDate": "2019-02-01",
+            "summary": "Maintenance du legacy d'une grosse plateforme de création de marketplaces.",
+            "highlights": []
+        },
+        {
+            "name": "Wild Code School",
+            "location" : "Lyon",
+            "position": "Formateur en développement web",
+            "url": "https://www.wildcodeschool.com/",
+            "startDate": "2018-02-01",
+            "endDate": "2018-08-01",
+            "summary": "Session d'une formation php / symfony complète : 5 mois intensif avec 14 élèves, majoritairement des adultes en reconversion.",
+            "highlights": []
+        },
+        {
+            "name": "Luminjo",
+            "location" : "Amiens",
+            "position": "Développeur web",
+            "url": "https://fr.luminjo.com/",
+            "startDate": "2016-06-01",
+            "endDate": "2017-08-01",
+            "summary": "Conception et développement du site Luminjo sur silex. En solo sur le projet, j'ai pu démarrer un développement propre sur un silex 2.0 à base de composants symfony et de bonne pratiques.",
+            "highlights": []
+        },
+        {
+            "name": "Geolid",
+            "location" : "Lyon",
+            "position": "Développeur web",
+            "url": "https://geolid.com/",
+            "startDate": "2015-03-01",
+            "endDate": "2016-06-01",
+            "summary": "Maintien et refonte de l'ERP de PHP legacy vers Symfony2, migration et mise à jours des outils (svn vers git, PHP legacy vers POO, tests automatisés, etc).",
+            "highlights": []
+        },
+        {
+            "name": "Mapado",
+            "location" : "Lyon",
+            "position": "Développeur web",
+            "url": "https://www.mapado.com/",
+            "startDate": "2014-07-01",
+            "endDate": "2015-03-01",
+            "summary": "Nouvelle startup des fondateurs de Clubic (entre autre), j'ai participé principalement au développement du site sous symfony2 en méthode agile.",
+            "highlights": []
+        },
+        {
+            "name": "E-monsite",
+            "location" : "Amiens",
+            "position": "Développeur web",
+            "url": "https://www.e-monsite.com",
+            "startDate": "2010-11-01",
+            "endDate": "2014-03-01",
+            "summary": "Développement du CMS en ligne e-monsite.com et du framework interne (PHP 5.4 & MySQL).\nPlateforme à fort trafic : sharding de bdd, memcache, lazyload, optimisations...",
+            "highlights": []
         }
     ],
-    "volunteer": [{
-        "organization": "Organization",
-        "position": "Volunteer",
-        "url": "https://organization.com/",
-        "startDate": "2012-01-01",
-        "endDate": "2013-01-01",
-        "summary": "Description…",
-        "highlights": [
-            "Awarded 'Volunteer of the Month'"
-        ]
-    }],
-    "education": [{
-        "institution": "University",
-        "url": "https://institution.com/",
-        "area": "Software Development",
-        "studyType": "Bachelor",
-        "startDate": "2011-01-01",
-        "endDate": "2013-01-01",
-        "score": "4.0",
-        "courses": [
-            "DB1101 - Basic SQL"
-        ]
-    }],
-    "awards": [{
-        "title": "Award",
-        "date": "2014-11-01",
-        "awarder": "Company",
-        "summary": "There is no spoon."
-    }],
-    "certificates": [{
-        "name": "Certificate",
-        "date": "2021-11-07",
-        "issuer": "Company",
-        "url": "https://certificate.com"
-    }],
-    "publications": [{
-        "name": "Publication",
-        "publisher": "Company",
-        "releaseDate": "2014-10-01",
-        "url": "https://publication.com",
-        "summary": "Description…"
-    }],
-    "skills": [{
-        "name": "Web Development",
-        "level": "Master",
-        "keywords": [
-            "HTML",
-            "CSS",
-            "JavaScript"
-        ]
-    }],
-    "languages": [{
-        "language": "English",
-        "fluency": "Native speaker"
-    }],
-    "interests": [{
-        "name": "Wildlife",
-        "keywords": [
-            "Ferrets",
-            "Unicorns"
-        ]
-    }],
-    "references": [{
-        "name": "Jane Doe",
-        "reference": "Reference…"
-    }],
-    "projects": [{
-        "name": "Project",
-        "startDate": "2019-01-01",
-        "endDate": "2021-01-01",
-        "description": "Description...",
-        "highlights": [
-            "Won award at AIHacks 2016"
-        ],
-        "url": "https://project.com/"
-    }]
+    "education": [
+        {
+            "institution": "IUT d'Aix-Marseille - Gap",
+            "url": "https://www.facebook.com/LICENCE.MIW.MULTIMEDIA.INTERNET.WEBMASTER/",
+            "area": "Développement web",
+            "studyType": "Licence professionnelle",
+            "startDate": "2009-09-01",
+            "endDate": "2010-04-01",
+            "courses": ["PHP", "Mysql", "HTML", "CSS", "Javascript"]
+        },
+        {
+            "institution": "La Providence - Amiens",
+            "url": "https://www.la-providence.net/fr/pages/bts-cybersecurite-en-apprentissage-46",
+            "area": "Informatique et réseaux",
+            "studyType": "BTS",
+            "startDate": "2005-09-01",
+            "endDate": "2007-06-01",
+            "courses": ["Algorithmie", "Programmation C / C++", "informatique industrielle"]
+        }
+    ],
+    "skills": [
+        {
+            "name": "PHP",
+            "keywords": [
+                "PHP objet",
+                "normes PSR / PER CS",
+                "injection de dépendances",
+                "abstraction et interfaces",
+                "Framework Symfony"
+            ]
+        },
+        {
+            "name": "SGBD",
+            "keywords": ["indexations", "optimisations", "ORM Doctrine"]
+        },
+        {
+            "name": "JS",
+            "keywords": ["ES-6", "framework Stimulus", "API HTML5 (service worker, push, ...)"]
+        },
+        {
+            "name": "Front",
+            "keywords": ["HTML5", "CSS", "Bootstrap", "Twig", "Intégration responsive"]
+        },
+        {
+            "name": "Environnement",
+            "keywords": ["PhpStorm", "GIT", "Composer", "serveur LAMP / Nginx", "Docker", "Caprover"]
+        }
+    ],
+    "languages": [
+        {
+            "language": "Français",
+            "fluency": "Natif"
+        },
+        {
+            "language": "Anglais",
+            "fluency": "Lecture de doc maîtrisée, compréhension orale acceptable, amateur de vost"
+        }
+    ],
+    "interests": [
+        {
+            "name": "Culture geek",
+            "keywords": [
+                "Twitch",
+                "Gaming"
+            ]
+        },
+        {
+            "name": "Entrepreneuriat",
+            "keywords": [
+                "Création de SASS"
+            ]
+        },
+        {
+            "name": "mode de vie sain",
+            "keywords": [
+                "Fitness",
+                "Nutrition"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "Trouve un trésor",
+            "description": "Site de diffusion et vente de la chasse au trésor créée par mon frère.",
+            "highlights": [
+                "Plus de 700 participants sur la première chasse", ""
+            ],
+            "url": "https://www.trouve-un-tresor.com/"
+        },
+        {
+            "name": "Call of Geek",
+            "description": "Call of Geek est un site communautaire dédié à la culture geek.",
+            "url": "https://www.call-of-geek.com/"
+        },
+        {
+            "name": "WoW interfaces",
+            "description": "Wow-interfaces est un site dédié aux interfaces du jeu World of Warcraft.\n(Très) vieux projet jamais vraiment mis en ligne, j'ai profité d'une période de calme pour le coder sous Symfony et y rajouter quelques fonctionnalités.",
+            "url": "https://www.wow-interfaces.com/"
+        },
+        {
+            "name": "BetaTrailer",
+            "description": "les bandes-annonces des films, séries et jeux-vidéos regroupées en temps réel en un seul endroit, en VF & VOST.",
+            "url": "https://www.betatrailer.com/"
+        },
+        {
+            "name": "Tab Wheel Scroll",
+            "description": "Tab Wheel Scroll est une petite extension Chrome pour pouvoir switcher d'onglet avec ALT + molette ou clic droit + molette.",
+            "url": "https://chromewebstore.google.com/detail/tab-wheel-scroll/aknfcgiicpmnfhncpljcadokcghjblal"
+        }
+    ]
 }
